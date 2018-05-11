@@ -1,8 +1,8 @@
 from pyspark import SparkConf, SparkContext
 from operator import add
 from pyspark.sql import SparkSession
-train_path='/home/hadoop/lab3/cse587-Lab3/train.csv'
-test_path='/home/hadoop/lab3/cse587-Lab3/test.csv'
+train_path='/home/hadoop/lab3/cse587-Lab3/Part1/train.csv'
+test_path='/home/hadoop/lab3/cse587-Lab3/Part1/test.csv'
 sc =SparkContext()
 spark = SparkSession(sc)
 # Load csv file as RDD
@@ -168,3 +168,4 @@ models = {'LogisticRegression':lr,
 		  'RandomForest':rf}
 
 modelPerf = {k:testModel(v) for k,v in models.iteritems()}
+print modelPerf
